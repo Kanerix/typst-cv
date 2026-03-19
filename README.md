@@ -84,10 +84,10 @@ To add a new job or education entry, use the `entry` function in the respective 
 The colour palette is defined at the top of `src/helpers.typ`:
 
 ```typ
-#let accent   = rgb("#2b4a6f")   // Sidebar & headings
-#let light-bg = rgb("#eaf0f6")   // Light background accent
-#let body-fg  = rgb("#333333")   // Main text colour
-#let muted    = rgb("#777777")   // Subtle/secondary text
+#let bg      = rgb("#fff8f2")   // Page background
+#let fg      = rgb("#333333")   // Main text colour
+#let muted   = rgb("#777777")   // Subtle/secondary text
+#let primary = rgb("#d7b299")   // Sidebar & headings
 ```
 
 ### Profile Picture
