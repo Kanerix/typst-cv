@@ -6,6 +6,11 @@ A clean, two-column CV built with [Typst](https://typst.app/) — featuring a sl
 
 The latest compiled PDF is available as a [GitHub Release](../../releases/latest).
 
+> [!NOTE]
+> This link will always reference the latest release of your CV on GitHub.
+>
+> Direct download: [https://github.com/Kanerix/typst-cv/releases/latest/download/cv.pdf](https://github.com/Kanerix/typst-cv/releases/latest/download/cv.pdf)
+
 ## Project Structure
 
 ```
