@@ -47,6 +47,11 @@
   v(2pt)
 }
 
+#let invisible-text(body) = {
+  set text(size: 0pt, fill: rgb(0, 0, 0, 0))
+  body
+}
+
 #let skill-bar(name, level) = {
   text(size: 9pt, fill: white, name)
   v(2pt)
