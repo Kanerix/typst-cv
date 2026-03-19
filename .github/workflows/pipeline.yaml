@@ -1,0 +1,46 @@
+name: Build CV and Release
+
+on:
+  push:
+    paths:
+      - VERSION
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Read version
+        id: version
+        run: echo "version=$(cat VERSION | tr -d '[:space:]')" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v4
+
+      - name: Compile CV to PDF
+        run: typst compile --font-path Poppins src/cv.typ cv.pdf
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-pdf
+          path: cv.pdf
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: CV v${{ steps.version.outputs.version }}
+          body: |
+            Automated CV build for version `v${{ steps.version.outputs.version }}`.
+          files: cv.pdf
+          draft: false
+          prerelease: false
+          make_latest: true
