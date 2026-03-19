@@ -11,14 +11,14 @@
   v(4pt)
 }
 
-#let entry(title: "", subtitle: "", city: "", location: "", date: "", description: []) = {
+#let entry(title: "", subtitle: "", location: "", date: "", description: []) = {
   grid(
     columns: (1fr, auto),
     text(weight: "bold", size: 10.5pt, title),
     align(right, text(size: 9pt, fill: muted, date)),
   )
   if subtitle != "" {
-    text(style: "italic", size: 9.5pt, fill: muted, subtitle)
+    text(style: "italic", size: 9.5pt, fill: muted, [#subtitle, #location])
     linebreak()
   }
   v(2pt)
