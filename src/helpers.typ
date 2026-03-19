@@ -1,13 +1,13 @@
-#let accent    = rgb("#2b4a6f")
-#let light-bg  = rgb("#eaf0f6")
-#let body-fg   = rgb("#333333")
-#let muted     = rgb("#777777")
+#let bg       = rgb("#fff8f2")
+#let fg       = rgb("#333333")
+#let muted    = rgb("#777777")
+#let primary  = rgb("#d7b299")
 
 #let section-title(title) = {
   v(10pt)
-  text(size: 13pt, weight: "bold", fill: accent, upper(title))
+  text(size: 13pt, weight: "bold", fill: primary, upper(title))
   v(-2pt)
-  line(length: 100%, stroke: 0.75pt + accent)
+  line(length: 100%, stroke: 0.75pt + primary)
   v(4pt)
 }
 
@@ -40,9 +40,7 @@
 }
 
 #let sidebar-item-link(icon, body, href) = {
-  link(href)[
-    #text(size: 9pt, fill: white.transparentize(10%), [#icon #body])
-  ]
+  link(href, text(size: 9pt, fill: white.transparentize(10%), [#icon #body]))
   linebreak()
   v(2pt)
 }

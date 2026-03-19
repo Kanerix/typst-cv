@@ -1,17 +1,19 @@
-#import "helpers.typ": accent, light-bg, body-fg, muted, section-title, entry, sidebar-section, sidebar-item, sidebar-item-link, skill-bar, invisible-text
+#import "helpers.typ": primary, bg, fg, muted, section-title, entry, sidebar-section, sidebar-item, sidebar-item-link, skill-bar, invisible-text
 
 #let name      = "Kasper Jønsson"
 #let email     = "kas@lerpz.com"
 #let phone     = "+45 60 18 80 69"
 #let location  = "Brøndby, 2605"
 #let linkedin  = "https://www.linkedin.com/in/kasper-jonsson/"
+#let github    = "https://github.com/Kanerix/"
 
 #set page(
   paper: "a4",
   margin: (top: 0pt, bottom: 0pt, left: 0pt, right: 0pt),
+  fill: bg,
 )
 
-#set text(font: "Poppins", size: 10pt, fill: body-fg)
+#set text(font: "Poppins", size: 10pt, fill: fg)
 #set par(leading: 0.65em)
 
 #let sidebar-width = 30%
@@ -24,7 +26,7 @@
     width: 100%,
     inset: (top: 36pt, bottom: 36pt, left: 36pt, right: 24pt),
   )[
-    #text(size: 28pt, weight: "bold", fill: accent)[#name]
+    #text(size: 28pt, weight: "bold", fill: primary)[#name]
     #linebreak()
     #v(0mm)
     #text(size: 13pt, fill: muted)[Student Worker]
@@ -67,7 +69,7 @@
   box(
     width: 100%,
     height: 100%,
-    fill: accent,
+    fill: primary,
     inset: (top: 36pt, bottom: 36pt, left: 16pt, right: 16pt),
   )[
     #align(center)[
@@ -83,10 +85,11 @@
     ]
 
     #sidebar-section("Contact")
-    #sidebar-item("📧", phone)
+    #sidebar-item("📞", phone)
     #sidebar-item("📧", email)
     #sidebar-item("📍", location)
     #sidebar-item-link("🔗", "LinkedIn", linkedin)
+    #sidebar-item-link("🔗", "GitHub", github)
 
     #sidebar-section("Skills")
     #skill-bar("Python", 90%)
